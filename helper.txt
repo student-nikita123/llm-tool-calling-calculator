@@ -1,0 +1,47 @@
+Calculator setup and import help
+ 
+The LangChain packages are installed in this project's virtual environment:
+
+venv\Scripts\python.exe
+ 
+Open a terminal in the LLM_Calculator folder and activate the environment:
+ 
+    .\venv\Scripts\Activate.ps1
+ 
+Install requirements into the active environment:
+ 
+    python -m pip install -r requirements.txt
+ 
+Verify Python is using the correct environment:
+ 
+    python -c "import sys; print(sys.executable)"
+ 
+The printed path should end with:
+ 
+    LLM_Calculator\venv\Scripts\python.exe
+ 
+Verify the packages can be imported:
+ 
+    python -c "import langchain_core, langchain_ollama; print('Imports OK')"
+ 
+In VS Code, use Ctrl+Shift+P, choose "Python: Select Interpreter", and select:
+ 
+    <project folder>\LLM_Calculator\venv\Scripts\python.exe
+ 
+The ModuleNotFoundError occurs if the script runs with a different Python
+
+interpreter. In this workspace, the unqualified "python" command resolves to
+
+C:\Python314\python.exe, which does not have LangChain installed.
+ 
+Run the calculator from this folder with:
+ 
+    python main.py
+
+Run the Streamlit interface from the project root with:
+
+    .\venv\Scripts\Activate.ps1
+    python -m pip install -r requirements.txt
+    python -m streamlit run ui\streamlit_app.py
+
+ 
